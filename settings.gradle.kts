@@ -1,24 +1,24 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
+        google()
         gradlePluginPortal()
+        mavenCentral()
+    }
+    plugins {
+        id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+        id("com.android.application") version "8.3.0"
+        id("org.jetbrains.kotlin.android") version "2.0.0"
+        id("kotlin-kapt") version "2.0.0"
+        id("dagger.hilt.android.plugin") version "2.48"
     }
 }
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
     }
 }
 
-rootProject.name = "My Series Application"
+rootProject.name = "MySeriesApplication"
 include(":app")
- 
